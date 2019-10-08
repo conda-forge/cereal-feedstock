@@ -11,12 +11,11 @@ source:
 
 build:
   noarch: generic
-  number: 0
+  number: 1
 
 requirements:
   build:
-    # We do not actually need make, but conda requires us to have at least one requirement.
-    - make
+    - cmake
 
 test:
   commands:
