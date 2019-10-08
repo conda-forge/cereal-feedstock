@@ -9,6 +9,10 @@ source:
   url: https://github.com/USCiLab/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 1921f26d2e1daf9132da3c432e2fd02093ecaedf846e65d7679ddf868c7289c4
 
+  patches:
+    # remove cxx compiler dependency
+    - no-compiler.patch
+
 build:
   noarch: generic
   number: 1
