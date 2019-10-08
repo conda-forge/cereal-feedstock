@@ -9,14 +9,17 @@ source:
   url: https://github.com/USCiLab/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 1921f26d2e1daf9132da3c432e2fd02093ecaedf846e65d7679ddf868c7289c4
 
+  patches:
+    # remove cxx compiler dependency
+    - no-compiler.patch
+
 build:
   noarch: generic
-  number: 0
+  number: 1
 
 requirements:
   build:
-    # We do not actually need make, but conda requires us to have at least one requirement.
-    - make
+    - cmake
 
 test:
   commands:
@@ -35,3 +38,4 @@ about:
 extra:
   recipe-maintainers:
     - saraedum
+    - joaander
