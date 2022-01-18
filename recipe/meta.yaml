@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - cmake
+    - ninja
 
 test:
   commands:
