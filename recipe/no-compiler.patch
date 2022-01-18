@@ -1,11 +1,12 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index dcb9cd6..4c5506b 100644
+index ddaa91e2..5c256be5 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -1,5 +1,5 @@
- cmake_minimum_required (VERSION 2.6.2)
--project (cereal)
+@@ -1,6 +1,6 @@
+ cmake_minimum_required(VERSION 3.6...3.15)
+ 
+-project(cereal LANGUAGES CXX VERSION 1.3.1)
 +project (cereal NONE)
  
- option(SKIP_PORTABILITY_TEST "Skip portability (32 bit) tests" OFF)
- if(NOT CMAKE_VERSION VERSION_LESS 3.0) # installing cereal requires INTERFACE lib
+ if(PROJECT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+     set(CEREAL_MASTER_PROJECT ON)
