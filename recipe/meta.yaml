@@ -9,18 +9,27 @@ source:
   url: https://github.com/USCiLab/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 16a7ad9b31ba5880dac55d62b5d6f243c3ebc8d46a3514149e56b5e7ea81f85f
 
-  patches:
-    # remove cxx compiler dependency
-    - no-compiler.patch
-
 build:
-  noarch: generic
-  number: 0
+  number: 1
+  script:
+    - set -ex  # [unix]
+    - >
+       cmake
+       ${CMAKE_ARGS}  # [unix]
+       -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX%  # [win]
+       -B_build -GNinja
+    - cmake --build _build
+    - cmake --install _build
 
 requirements:
   build:
+    - {{ compiler('cxx') }}
     - cmake
     - ninja
+  host:
+    - boost-cpp
+  run:
+    - boost-cpp
 
 test:
   commands:
