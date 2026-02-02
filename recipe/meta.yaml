@@ -12,6 +12,8 @@ source:
   patches:
     # remove cxx compiler dependency
     - no-compiler.patch
+    # ref: https://github.com/USCiLab/cereal/pull/835
+    - template-apply.patch
 
 build:
   noarch: generic
