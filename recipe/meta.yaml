@@ -22,6 +22,8 @@ requirements:
   build:
     - cmake
     - ninja
+  host:
+    - boost-cpp
 
 test:
   commands:
