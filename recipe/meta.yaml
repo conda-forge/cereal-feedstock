@@ -16,8 +16,7 @@ source:
     - template-apply.patch
 
 build:
-  noarch: generic
-  number: 1
+  number: 2
 
 requirements:
   build:
